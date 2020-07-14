@@ -1,0 +1,100 @@
+@import "./constants";
+
+.btn {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9999px;
+
+  line-height: 1em;
+
+  border: 1px solid var(--accent);
+
+  &:disabled {
+    pointer-events: none;
+    cursor: auto;
+    opacity: 0.5;
+  }
+}
+
+.btn--xs {
+  padding: 0.25rem 0.5rem;
+}
+.btn--sm {
+  padding: 0.5rem 0.75rem;
+}
+.btn--md {
+  padding: 0.75rem 1rem;
+}
+.btn--lg {
+  padding: 1rem 1.25rem;
+  font-size: 1.25rem;
+}
+.btn--xl {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+.btn--important {
+  font-weight: 600;
+}
+
+.link {
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+
+  color: var(--primary);
+  background-color: transparent;
+
+  &:hover {
+    color: var(--primary_shade);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    bottom: -0.5rem;
+    right: -0.5rem;
+  }
+}
+
+@each $color in $variable-colors {
+  .btn--#{$color} {
+    background-color: var(--#{$color});
+    color: var(--#{$color}_contrast);
+
+    &:hover {
+      background-color: var(--#{$color}_shade);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(var(--#{$color}_rgb), 0.25);
+    }
+  }
+
+  .link--#{$color} {
+    color: var(--#{$color});
+
+    &:hover {
+      color: var(--#{$color}_shade);
+    }
+  }
+}

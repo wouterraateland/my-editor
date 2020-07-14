@@ -1,0 +1,27 @@
+$cursors: "auto", "default", "pointer", "wait", "text", "move", "not-allowed";
+
+@each $cursor in $cursors {
+  .cursor-#{$cursor} {
+    cursor: #{$cursor};
+  }
+}
+
+.select-none {
+  user-select: none;
+}
+.select-text {
+  user-select: text;
+}
+.select-all {
+  user-select: all;
+}
+.select-auto {
+  user-select: auto;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+.pointer-events-auto {
+  pointer-events: auto;
+}

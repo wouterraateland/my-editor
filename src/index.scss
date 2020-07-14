@@ -1,0 +1,84 @@
+body,
+body.light {
+  --text: #000000;
+  --caption: #00000099;
+  --accent: #00000022;
+  --glow: #00000011;
+  --background: #f9f9f9;
+  --card: #ffffff;
+  --primary: #0055ff;
+  --secondary: #ff2211;
+  --error: #f13c3c;
+  --warning: #f1af3c;
+  --success: #22bf81;
+  --marker: #ffffaa99;
+  --black: #000000;
+  --white: #ffffff;
+  --red: #f13c3c;
+  --orange: #ff5544;
+  --yellow: #f1af3c;
+  --green: #22bf81;
+  --cyan: #2ab7c5;
+  --blue: #5460c1;
+  --purple: #8d4ba9;
+  --pink: #ec45b2;
+  --whatsapp: #21d366;
+  --facebook: #1877f2;
+}
+
+body.dark {
+  --text: #ffffff;
+  --caption: #ffffffaa;
+  --accent: #ffffff33;
+  --glow: #ffffff11;
+  --background: #121212;
+  --card: #232323;
+  --primary: #3399ff;
+  --secondary: #ee2200;
+  --error: #f13c3c;
+  --warning: #f1af3c;
+  --success: #22bf81;
+  --marker: #61610099;
+  --black: #000000;
+  --white: #ffffff;
+  --red: #f13c3c;
+  --orange: #ff5544;
+  --yellow: #f1af3c;
+  --green: #22bf81;
+  --cyan: #2ab7c5;
+  --blue: #5460c1;
+  --purple: #8d4ba9;
+  --pink: #ec45b2;
+  --whatsapp: #21d366;
+  --facebook: #1877f2;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

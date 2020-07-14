@@ -1,0 +1,12 @@
+@import "./constants";
+
+@each $color in $variable-colors {
+  .bg-#{$color} {
+    background-color: var(--#{$color});
+    color: var(--#{$color}_contrast);
+  }
+}
+
+.bg-transparent {
+  background-color: transparent;
+}

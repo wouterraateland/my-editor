@@ -1,0 +1,24 @@
+$variable-sizes: "tiny", "small", "medium", "large", "huge";
+$fixed-sizes: 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64;
+
+$flex-alignments: "flex-start", "flex-end", "center", "space-between",
+  "space-around", "stretch", "baseline", "space-evenly", "normal";
+
+$text-alignments: "left", "center", "right", "justify";
+
+$font-weights: (
+  "hairline": 100,
+  "thin": 200,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900,
+);
+
+$variable-colors: "text", "caption", "accent", "glow", "background", "card",
+  "primary", "secondary", "error", "warning", "success", "black", "white", "red",
+  "orange", "yellow", "green", "cyan", "blue", "purple", "pink", "whatsapp",
+  "facebook";

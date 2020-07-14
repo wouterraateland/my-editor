@@ -1,0 +1,15 @@
+.notifications__container {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  z-index: 1;
+
+  max-width: 100%;
+
+  transform: translate(-50%, 0);
+}
+
+.notifications__notification {
+  overflow: hidden;
+  max-height: 5rem;
+}

@@ -1,14 +1,25 @@
 {
   "name": "my-editor",
+  "description": "Edit and organize documents your way",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "classnames": "^2.2.6",
+    "codemirror": "^5.55.0",
+    "date-fns": "^2.14.0",
+    "history": "^5.0.0",
+    "node-sass": "^4.14.1",
+    "react": "^0.0.0-experimental-7f28234f8",
+    "react-dom": "^0.0.0-experimental-7f28234f8",
+    "react-error-boundary": "^2.2.3",
+    "react-router": "^6.0.0-beta.0",
+    "react-router-dom": "^6.0.0-beta.0",
+    "react-scripts": "3.4.1",
+    "sass": "^1.26.10",
+    "uuid": "^8.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

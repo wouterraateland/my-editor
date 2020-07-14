@@ -1,0 +1,46 @@
+.flyout__container {
+  position: fixed;
+  z-index: 10;
+  max-width: calc(100vw - 16px);
+}
+
+.flyout__triangle {
+  pointer-events: none;
+  position: absolute;
+
+  border: 0.55rem solid transparent;
+
+  &.bottom {
+    border-bottom-color: var(--card);
+  }
+  &.left {
+    border-left-color: var(--card);
+  }
+  &.top {
+    border-top-color: var(--card);
+  }
+  &.right {
+    border-right-color: var(--card);
+  }
+
+  transform: translate(-50%, -50%);
+}
+
+.flyout__item {
+  display: block;
+  padding: 0.25rem 1rem;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--glow);
+  }
+
+  &:focus-within {
+    background-color: var(--glow);
+  }
+}

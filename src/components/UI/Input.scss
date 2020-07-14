@@ -1,0 +1,74 @@
+.input__container {
+  position: relative;
+  flex-grow: 1;
+
+  // font-size: ${getFontSize};
+  line-height: 1.5rem;
+
+  background-color: var(--card);
+  color: var(--caption);
+
+  &:focus-within {
+    z-index: 1;
+
+    &,
+    .input__label {
+      color: var(--primary);
+    }
+  }
+}
+
+.input__container--disabled {
+  background-color: var(--glow);
+}
+
+.input__container--contained {
+  border: 1px solid var(--accent);
+
+  &:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(var(--primary_rgb), 0.25);
+  }
+}
+
+.input__container--xs {
+  padding: 0 0.5rem;
+}
+.input__container--sm {
+  padding: 0.25rem 0.75rem;
+}
+.input__container--md {
+  padding: 0.5rem 1rem;
+}
+.input__container--lg {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+}
+.input__container--xl {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+}
+
+.input__container--bare {
+  padding: 0;
+  &:focus-within {
+    box-shadow: 0 1px var(--primary);
+  }
+}
+
+.input__inner {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  color: var(--caption);
+}
+
+.input__inner--filled {
+  color: var(--text);
+}
+
+.input__asterix {
+  line-height: 0;
+  color: var(--error);
+}

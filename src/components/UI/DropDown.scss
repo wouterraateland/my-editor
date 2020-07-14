@@ -1,0 +1,36 @@
+.dropdown {
+  padding: 0 0.5rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--primary_rgb), 0.25);
+    z-index: 1;
+  }
+}
+
+.dropdown--bordered {
+  cursor: pointer;
+  background-color: var(--card);
+
+  border: 1px solid var(--accent);
+
+  &:focus {
+    border-color: var(--primary);
+  }
+}
+
+.dropdown--xl {
+  padding: 1.25rem 2rem;
+}
+.dropdown--lg {
+  padding: 1rem 1.5rem;
+}
+.dropdown--md {
+  padding: 0.5rem 1rem;
+}
+.dropdown--sm {
+  padding: 0.25rem 0.75rem;
+}
+.dropdown--xs {
+  padding: 0 0.5rem;
+}

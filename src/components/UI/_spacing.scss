@@ -1,0 +1,174 @@
+@import "./constants";
+
+@each $alignment in $flex-alignments {
+  .items-#{$alignment} {
+    align-items: #{$alignment};
+  }
+  .self-#{$alignment} {
+    align-self: #{$alignment};
+  }
+  .content-#{$alignment} {
+    align-content: #{$alignment};
+  }
+  .justify-#{$alignment} {
+    justify-content: #{$alignment};
+  }
+}
+
+$box-properties: (
+  "p": "padding",
+  "m": "margin",
+);
+@each $prefix, $prop in $box-properties {
+  @each $size in $fixed-sizes {
+    .#{$prefix}-#{$size} {
+      #{$prop}: #{$size / 4}rem;
+    }
+    .#{$prefix}y-#{$size} {
+      #{$prop}-top: #{$size / 4}rem;
+      #{$prop}-bottom: #{$size / 4}rem;
+    }
+    .#{$prefix}x-#{$size} {
+      #{$prop}-left: #{$size / 4}rem;
+      #{$prop}-right: #{$size / 4}rem;
+    }
+    .#{$prefix}t-#{$size} {
+      #{$prop}-top: #{$size / 4}rem;
+    }
+    .#{$prefix}l-#{$size} {
+      #{$prop}-left: #{$size / 4}rem;
+    }
+    .#{$prefix}b-#{$size} {
+      #{$prop}-bottom: #{$size / 4}rem;
+    }
+    .#{$prefix}r-#{$size} {
+      #{$prop}-right: #{$size / 4}rem;
+    }
+  }
+
+  @each $size in $variable-sizes {
+    .#{$prefix}-#{$size} {
+      #{$prop}: var(--spacing-#{$size});
+    }
+    .#{$prefix}y-#{$size} {
+      #{$prop}-top: var(--spacing-#{$size});
+      #{$prop}-bottom: var(--spacing-#{$size});
+    }
+    .#{$prefix}x-#{$size} {
+      #{$prop}-left: var(--spacing-#{$size});
+      #{$prop}-right: var(--spacing-#{$size});
+    }
+    .#{$prefix}t-#{$size} {
+      #{$prop}-top: var(--spacing-#{$size});
+    }
+    .#{$prefix}l-#{$size} {
+      #{$prop}-left: var(--spacing-#{$size});
+    }
+    .#{$prefix}b-#{$size} {
+      #{$prop}-bottom: var(--spacing-#{$size});
+    }
+    .#{$prefix}r-#{$size} {
+      #{$prop}-right: var(--spacing-#{$size});
+    }
+  }
+}
+
+@each $size in $fixed-sizes {
+  .m--#{$size} {
+    margin: #{-1 * $size / 4}rem;
+  }
+  .my--#{$size} {
+    margin-top: #{-1 * $size / 4}rem;
+    margin-bottom: #{-1 * $size / 4}rem;
+  }
+  .mx--#{$size} {
+    margin-left: #{-1 * $size / 4}rem;
+    margin-right: #{-1 * $size / 4}rem;
+  }
+  .mt--#{$size} {
+    margin-top: #{-1 * $size / 4}rem;
+  }
+  .ml--#{$size} {
+    margin-left: #{-1 * $size / 4}rem;
+  }
+  .mb--#{$size} {
+    margin-bottom: #{-1 * $size / 4}rem;
+  }
+  .mr--#{$size} {
+    margin-right: #{-1 * $size / 4}rem;
+  }
+}
+
+@each $size in $variable-sizes {
+  .m--#{$size} {
+    margin: calc(-1 * var(--spacing-#{$size}));
+  }
+  .my--#{$size} {
+    margin-top: calc(-1 * var(--spacing-#{$size}));
+    margin-bottom: calc(-1 * var(--spacing-#{$size}));
+  }
+  .mx--#{$size} {
+    margin-left: calc(-1 * var(--spacing-#{$size}));
+    margin-right: calc(-1 * var(--spacing-#{$size}));
+  }
+  .mt--#{$size} {
+    margin-top: calc(-1 * var(--spacing-#{$size}));
+  }
+  .ml--#{$size} {
+    margin-left: calc(-1 * var(--spacing-#{$size}));
+  }
+  .mb--#{$size} {
+    margin-bottom: calc(-1 * var(--spacing-#{$size}));
+  }
+  .mr--#{$size} {
+    margin-right: calc(-1 * var(--spacing-#{$size}));
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+
+$space-properties: (
+  "space-x": "margin-left",
+  "space-y": "margin-top",
+);
+@each $prefix, $prop in $space-properties {
+  @each $size in $fixed-sizes {
+    .#{$prefix}-#{$size} > * + * {
+      #{$prop}: #{$size / 4}rem;
+    }
+    .-#{$prefix}-#{$size} > * + * {
+      #{$prop}: #{-$size / 4}rem;
+    }
+  }
+
+  @each $size in $variable-sizes {
+    .#{$prefix}-#{$size} > * + * {
+      #{$prop}: var(--spacing-#{$size});
+    }
+    .-#{$prefix}-#{$size} > * + * {
+      #{$prop}: calc(-1 * var(--spacing-#{$size}));
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@import "./constants";
+
+@each $alignment in $text-alignments {
+  .text-#{$alignment} {
+    text-align: #{$alignment};
+  }
+}
+
+@each $color in $variable-colors {
+  .text-#{$color} {
+    color: var(--#{$color});
+  }
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.normal-case {
+  text-transform: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+.not-italic {
+  font-style: normal;
+}
+
+.underline {
+  text-decoration: underline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.no-underline {
+  text-decoration: none;
+}
+
+@each $name, $weight in $font-weights {
+  .font-#{$name} {
+    font-weight: #{$weight};
+  }
+}
+
+@each $n in 1, 2, 3, 4, 5 {
+  .max-lines-#{$n} {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: #{$n};
+    overflow: hidden;
+  }
+}
+
+.hyphenate {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.truncate {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.break-normal {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+.break-words {
+  overflow-wrap: break-word;
+}
+.break-all {
+  word-break: break-all;
+}
+
+.text--label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--caption);
+}

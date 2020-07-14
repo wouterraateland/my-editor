@@ -1,0 +1,31 @@
+@import "./constants";
+
+.box {
+  display: flex;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.box--horizontal {
+  flex-direction: row;
+}
+
+.box--vertical {
+  flex-direction: column;
+}
+
+@each $size in $variable-sizes {
+  .box--wrapping--#{$size} {
+    flex-wrap: wrap;
+
+    margin-right: calc(-1 * var(--spacing-#{$size}));
+    margin-bottom: calc(-1 * var(--spacing-#{$size}));
+
+    & > * {
+      margin-right: var(--spacing-#{$size});
+      margin-bottom: var(--spacing-#{$size});
+    }
+  }
+}
