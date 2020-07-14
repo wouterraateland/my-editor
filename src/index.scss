@@ -62,9 +62,16 @@ body,
 
 body {
   font-family: "Source Code Pro", monospace;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 
   background-color: var(--background);
   color: var(--text);
+
+  will-change: background-color, color;
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 h1,
