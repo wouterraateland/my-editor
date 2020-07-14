@@ -12,7 +12,7 @@ export default () => {
     addNode: (params) => {
       const id = uuidv4();
       const newNode = {
-        path: `/${id}`,
+        path: id,
         ...params,
         id,
         createdAt: Date.now(),
