@@ -9,15 +9,17 @@ import ServiceWorkerManager from "./ServiceWorkerManager";
 import Notifications from "components/Notifications";
 
 export default () => (
-  <NotificationsProvider>
-    <ColorModeProvider>
-      <ErrorBoundary>
-        <Suspense fallback={<div className="loader" />}>
-          <ServiceWorkerManager />
-          <Notifications />
-          <Routes />
-        </Suspense>
-      </ErrorBoundary>
-    </ColorModeProvider>
-  </NotificationsProvider>
+  <Suspense fallback={<div className="loader" />}>
+    <NotificationsProvider>
+      <ColorModeProvider>
+        <ErrorBoundary>
+          <Suspense fallback={<div className="loader" />}>
+            <ServiceWorkerManager />
+            <Notifications />
+            <Routes />
+          </Suspense>
+        </ErrorBoundary>
+      </ColorModeProvider>
+    </NotificationsProvider>
+  </Suspense>
 );
