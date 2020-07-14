@@ -6,7 +6,7 @@ import React from "react";
 const Card = ({ elevation, className, ...props }) => (
   <div
     className={cx(
-      "card rounded",
+      "card",
       `elevation-${elevation}`,
       { "pointer-auto": props.onClick },
       className

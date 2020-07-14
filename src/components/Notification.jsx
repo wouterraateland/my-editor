@@ -1,10 +1,9 @@
 import React from "react";
 
 import * as Icons from "components/Icons";
-import { Card } from "components/UI";
 
 const Notification = ({ notification, onClose }) => (
-  <Card color={notification.type} elevation="md">
+  <div className={`card bg-${notification.type} rounded elevation-md`}>
     <div className="notifications__notification flex items-center space-x-2 p-4">
       <p>
         {typeof notification.message === "string"
@@ -20,7 +19,7 @@ const Notification = ({ notification, onClose }) => (
         <Icons.Cross />
       </button>
     </div>
-  </Card>
+  </div>
 );
 
 export default Notification;
