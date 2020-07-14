@@ -41,7 +41,7 @@ export default () => {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
-        <button>
+        <button className="flex items-center space-x-2 rounded border-0 bg-glow font-bold">
           <Icons.Plus /> New node
         </button>
       </form>
@@ -63,8 +63,9 @@ export default () => {
               event.stopPropagation();
               nodeList.removeNode(node.id);
             }}
+            className="flex items-center rounded border-0 bg-glow"
           >
-            <Icons.Bin />
+            <Icons.Bin className="text-text" />
           </button>
         </Link>
       ))}

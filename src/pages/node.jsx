@@ -14,19 +14,19 @@ export default withNodeContent(() => {
 
   return (
     <div className="flex flex-col items-normal h-full">
-      <nav className="flex justify-space-between p-2 space-x-4 border-solid border-0 border-b border-accent bg-glow">
-        <div className="flex items-center space-x-4">
+      <nav className="flex justify-space-between p-2 space-x-4 border-solid border-0 border-b border-accent bg-background">
+        <div className="flex space-x-4">
           <button
             to="/"
             onClick={() => navigate("/")}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 rounded border-0 font-bold bg-glow"
           >
-            <Icons.Arrow size={0.75} direction="left" />
+            <Icons.Arrow size={0.75} strokeWidth={5} direction="left" />
             <span>Home</span>
           </button>
           <NodePath />
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex space-x-4">
           <NodeSearch />
           <ColorModeSwitch />
         </div>

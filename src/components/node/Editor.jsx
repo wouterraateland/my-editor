@@ -196,7 +196,14 @@ const Editor = () => {
     if (editor) {
       editor.setValue(nodeContentResource.data || "");
       editor.focus();
+
+      const i = setInterval(
+        () => nodeContentResource.setState(editor.getValue()),
+        2000
+      );
+
       return () => {
+        clearInterval(i);
         nodeContentResource.setState(editor.getValue());
       };
     }

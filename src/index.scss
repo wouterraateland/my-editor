@@ -4,7 +4,7 @@ body.light {
   --caption: #00000099;
   --accent: #00000022;
   --glow: #00000011;
-  --background: #f9f9f9;
+  --background: #f2f2f2;
   --card: #ffffff;
   --primary: #0055ff;
   --secondary: #ff2211;
@@ -58,6 +58,10 @@ body,
 #root {
   margin: 0;
   height: 100%;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body {

@@ -8,11 +8,15 @@ const ColorModeSwitch = () => {
 
   return (
     <button
+      className="flex items-center rounded border-0 bg-glow"
       onClick={() =>
         setColorMode((colorMode) => (colorMode === "light" ? "dark" : "light"))
       }
     >
-      <Icons.Eye state={colorMode === "light" ? "open" : null} />
+      <Icons.Eye
+        strokeWidth={colorMode === "light" ? 3 : 5}
+        state={colorMode === "light" ? "open" : null}
+      />
     </button>
   );
 };
