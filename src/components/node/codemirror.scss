@@ -207,9 +207,10 @@
 .cm-s-default .cm-punctuation,
 .cm-s-default .cm-property,
 .cm-s-default .cm-operator {
+  color: var(--accent);
 }
 .cm-s-default .cm-variable-2 {
-  color: #05a;
+  color: var(--caption);
 }
 .cm-s-default .cm-variable-3,
 .cm-s-default .cm-type {
@@ -246,7 +247,7 @@
   color: #999;
 }
 .cm-s-default .cm-link {
-  color: var(--blue);
+  color: var(--primary);
 }
 
 .cm-s-default .cm-error {
