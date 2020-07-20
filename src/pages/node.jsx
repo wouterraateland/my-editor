@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import withNodeContent from "hocs/withNodeContent";
@@ -11,6 +11,10 @@ import ColorModeSwitch from "components/ColorModeSwitch";
 
 export default withNodeContent(() => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    navigator.storage.persist();
+  }, []);
 
   return (
     <div className="flex flex-col items-normal h-full">

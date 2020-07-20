@@ -1,27 +1,45 @@
 import * as _ from "utils";
+import { openDB } from "idb";
 
 import BaseResource from "./BaseResource";
 
-const Storage = {
-  get: ({ key }) => ({ value: localStorage.getItem(key) }),
-  set: ({ key, value }) => localStorage.setItem(key, value),
+const dbPromise = openDB("my-editor", 1, {
+  upgrade(db) {
+    db.createObjectStore("nodes");
+  },
+});
+
+const idbKeyval = {
+  async get(key) {
+    return (await dbPromise).get("nodes", key);
+  },
+  async set(key, val) {
+    return (await dbPromise).put("nodes", val, key);
+  },
+  async delete(key) {
+    return (await dbPromise).delete("nodes", key);
+  },
+  async clear() {
+    return (await dbPromise).clear("nodes");
+  },
+  async keys() {
+    return (await dbPromise).getAllKeys("nodes");
+  },
 };
 
 class StorageResource extends BaseResource {
-  constructor({ key, initialValue, options }) {
+  constructor({ key, initialValue }) {
     super();
     this.key = key;
-    this.parse = options?.parse || JSON.parse;
-    this.stringify = options?.stringify || JSON.stringify;
     this.fetch(initialValue);
   }
   async fetch(fallback) {
-    const { value } = await Storage.get({ key: this.key });
+    const value = await idbKeyval.get(this.key);
 
     if (_.isNothing(value)) {
       this.setState(fallback);
     } else {
-      this.onNext(this.parse(value));
+      this.onNext(value);
     }
   }
 
@@ -29,10 +47,7 @@ class StorageResource extends BaseResource {
     const nextData = typeof v === "function" ? v(this.data) : v;
     this.onNext(nextData);
 
-    Storage.set({
-      key: this.key,
-      value: this.stringify(nextData),
-    });
+    idbKeyval.set(this.key, nextData);
   }
 }
 
